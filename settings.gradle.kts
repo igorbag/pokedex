@@ -1,0 +1,4 @@
+rootProject.name = "Pokedex"
+include(
+    ":app"
+)

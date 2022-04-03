@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Pokedex</string>
+    <string name="label_subtitle">Listagem de todos os Pokemons</string>
+</resources>
