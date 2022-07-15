@@ -16,6 +16,7 @@ object Versions {
         const val activity = "1.4.0"
         const val uiTooling = compose
         const val toolingPreview = compose
+        const val navigation = "2.4.2"
     }
 
     object Dagger {
@@ -29,6 +30,7 @@ object Versions {
         const val work = "1.0.0"
         const val android = "2.40.5"
         const val compiler = "2.40.5"
+        const val hiltNavigation = "1.0.0"
     }
 
     object Google {

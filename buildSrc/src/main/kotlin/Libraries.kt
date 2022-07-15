@@ -17,7 +17,7 @@ object Libraries {
             "androidx.compose.ui:ui-tooling-preview:${Versions.Compose.toolingPreview}"
         const val material = "androidx.compose.material:material:${Versions.Compose.material}"
         const val activity = "androidx.activity:activity-compose:${Versions.Compose.activity}"
-
+        const val navigation = "androidx.navigation:navigation-compose:${Versions.Compose.navigation}"
         const val uiTest = "androidx.compose.ui:ui-test-junit4:${Versions.Compose.uiTest}"
         const val uiTooling = "androidx.compose.ui:ui-tooling:${Versions.Compose.uiTooling}"
     }
@@ -32,6 +32,7 @@ object Libraries {
         const val workCompiler = "androidx.hilt:hilt-compiler:${Versions.Hilt.work}"
         const val android = "com.google.dagger:hilt-android:${Versions.Hilt.android}"
         const val compiler = "com.google.dagger:hilt-android-compiler:${Versions.Hilt.compiler}"
+        const val hiltNavigation = "androidx.hilt:hilt-navigation-compose:${Versions.Hilt.hiltNavigation}"
     }
 
     object Kotlin {
@@ -72,7 +73,8 @@ object Libraries {
         const val junitExt = "androidx.test.ext:junit:${Versions.Test.junitExt}"
         const val espresso = "androidx.test.espresso:espresso-core:${Versions.Test.espresso}"
         const val kotlinTest = "org.jetbrains.kotlin:kotlin-test:${Versions.Test.kotlinTest}"
-        const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.Test.coroutines}"
+        const val coroutines =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.Test.coroutines}"
     }
 
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"

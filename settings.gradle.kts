@@ -1,6 +1,7 @@
 rootProject.name = "Pokedex"
 include(
     ":app",
-    ":data",
-    "domain"
+    ":datai:data",
+    ":datai:remote",
+    ":domain",
 )

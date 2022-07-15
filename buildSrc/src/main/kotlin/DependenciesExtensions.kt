@@ -20,6 +20,7 @@ fun Project.composeDependencies() = dependencies {
     implementation(Libraries.Compose.material)
     implementation(Libraries.Compose.activity)
     implementation(Libraries.Compose.toolingPreview)
+    implementation(Libraries.Compose.navigation)
 
     androidTestImplementation(Libraries.Compose.uiTest)
     debugImplementation(Libraries.Compose.uiTooling)
@@ -41,6 +42,7 @@ fun Project.daggerDependencies() = dependencies {
 fun Project.hiltDependencies() = dependencies {
     kapt(Libraries.Hilt.compiler)
     implementation(Libraries.Hilt.android)
+    implementation(Libraries.Hilt.hiltNavigation)
 }
 
 fun Project.androidTestDependencies() = dependencies {

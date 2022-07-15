@@ -1,9 +1,8 @@
 import configs.AppConfig
 import extensions.androidTestImplementation
 import extensions.implementation
-import extensions.internalApi
+import extensions.internalModule
 import extensions.testImplementation
-import java.util.Properties
 
 plugins {
     id(Plugins.Android.application)
@@ -28,6 +27,10 @@ androidConfig(
 )
 
 dependencies {
+    internalModule(":datai:data")
+    internalModule(":datai:remote")
+    internalModule(":domain")
+
     hiltDependencies()
     composeDependencies()
     androidXDependencies()
@@ -35,6 +38,7 @@ dependencies {
     coroutinesCoreDependencies()
     coroutinesAndroidDependencies()
 
+    implementation("androidx.palette:palette-ktx:1.0.0")
     implementation(Libraries.AndroidX.Ktx.activity)
     implementation(Libraries.timber)
 
