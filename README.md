@@ -5,6 +5,6 @@ Pokedex
 - Jetpack Compose
 - Multimodules
 
-
-![image](https://user-images.githubusercontent.com/5827265/179126872-26b52475-6e59-45c2-bf9d-cc6aa7475c6d.png)
-![image](https://user-images.githubusercontent.com/5827265/179126922-e4150599-8257-42eb-b2ee-40d1b527c522.png)
+![summary](https://user-images.githubusercontent.com/5827265/179634027-b72cec5e-4ed8-4efe-8701-c319fe3b2049.png)
+![Screenshot_20220718_203316](https://user-images.githubusercontent.com/5827265/179634110-579fe1e9-2a35-437c-9290-7d8e11cfc06b.png)
+![Screenshot_20220718_203328](https://user-images.githubusercontent.com/5827265/179634115-77051ea1-d30f-4ec3-bb89-304c324c3af3.png)
