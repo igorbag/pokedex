@@ -15,6 +15,7 @@ fun DetailRoute(
 
     DetailScreen(
         pokemonStats = state.pokemonStats,
+        isLoading = state.isLoading,
         onBackClick = onBackClick
     )
 }

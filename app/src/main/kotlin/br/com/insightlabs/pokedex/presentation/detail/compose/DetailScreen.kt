@@ -27,6 +27,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import br.com.insightlabs.pokedex.domain.model.PokemonStats
 import br.com.insightlabs.pokedex.presentation.components.Header
+import br.com.insightlabs.pokedex.presentation.components.ProgressLoading
 import br.com.insightlabs.pokedex.ui.theme.TextWhite
 import coil.compose.SubcomposeAsyncImage
 
@@ -34,10 +35,16 @@ import coil.compose.SubcomposeAsyncImage
 @Composable
 fun DetailScreen(
     pokemonStats: PokemonStats,
+    isLoading: Boolean,
     onBackClick: () -> Unit = {},
 ) {
     Header()
     Column {
+
+        if (isLoading) {
+            ProgressLoading()
+        }
+
         TopAppBar(
             title = { Text(pokemonStats.name) },
             backgroundColor = MaterialTheme.colors.primary,

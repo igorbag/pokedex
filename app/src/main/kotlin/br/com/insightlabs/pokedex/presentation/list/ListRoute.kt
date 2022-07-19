@@ -1,5 +1,6 @@
 package br.com.insightlabs.pokedex.presentation.list
 
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -15,6 +16,7 @@ fun ListRoute(
 
     ListScreen(
         pokemon = state.pokemons,
+        isLoading = state.isLoading,
         onDetailClick = navigateToDetail
     )
 }

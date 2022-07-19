@@ -1,11 +1,7 @@
 package br.com.insightlabs.pokedex.presentation.components
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
@@ -28,6 +24,7 @@ import coil.compose.SubcomposeAsyncImage
 @Composable
 fun Pokemons(
     pokemon: Pokemon,
+    isLoading: Boolean,
     onDetailClick: (Int, String) -> Unit
 ) {
 
@@ -37,6 +34,10 @@ fun Pokemons(
             .fillMaxHeight(),
         shape = RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp)
     ) {
+        if (isLoading) {
+            ProgressLoading()
+        }
+
         LazyVerticalGrid(
             cells = GridCells.Fixed(2)
         ) {
