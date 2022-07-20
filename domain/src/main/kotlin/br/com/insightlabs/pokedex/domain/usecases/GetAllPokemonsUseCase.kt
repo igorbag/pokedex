@@ -7,6 +7,9 @@ import javax.inject.Inject
 class GetAllPokemonsUseCase @Inject constructor(
     private val pokemonRepository: PokemonRepository
 ) {
-    suspend operator fun invoke(): Pokemon =
-        pokemonRepository.getAllPokemon()
+    suspend operator fun invoke(
+        limit: Int,
+        offset: Int
+    ): Pokemon =
+        pokemonRepository.getAllPokemon(limit, offset)
 }

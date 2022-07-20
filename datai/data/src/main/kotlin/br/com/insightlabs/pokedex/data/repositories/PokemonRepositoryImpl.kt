@@ -12,8 +12,11 @@ class PokemonRepositoryImpl @Inject constructor(
     private val remoteDataSource: PokemonDataSource.Remote
 ) : PokemonRepository {
 
-    override suspend fun getAllPokemon(): Pokemon = runBlocking(Dispatchers.IO) {
-        remoteDataSource.getAllPokemon()
+    override suspend fun getAllPokemon(
+        limit: Int,
+        offset: Int
+    ): Pokemon = runBlocking(Dispatchers.IO) {
+        remoteDataSource.getAllPokemon(limit, offset)
     }
 
     override suspend fun getStatsPokemonById(id: Int): PokemonStats = runBlocking(Dispatchers.IO) {

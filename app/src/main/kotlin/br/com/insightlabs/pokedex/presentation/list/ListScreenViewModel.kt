@@ -1,9 +1,12 @@
 package br.com.insightlabs.pokedex.presentation.list
 
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import br.com.insightlabs.pokedex.core.BaseViewModel
 import br.com.insightlabs.pokedex.core.runCatching
+import br.com.insightlabs.pokedex.domain.model.Pokemon
+import br.com.insightlabs.pokedex.domain.model.Result
 import br.com.insightlabs.pokedex.domain.usecases.GetAllPokemonsUseCase
 import br.com.insightlabs.pokedex.presentation.list.navigation.ListNavigation
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -16,6 +19,9 @@ class ListScreenViewModel @Inject constructor(
     private val getAllPokemonsUseCase: GetAllPokemonsUseCase,
 ) : BaseViewModel<ListState, ListAction>(ListState()) {
 
+    private var curPage = PAGE_INITIAL
+    var pokemonList = mutableStateOf<List<Result>>(listOf())
+
     init {
         getAllPokemons()
     }
@@ -25,14 +31,23 @@ class ListScreenViewModel @Inject constructor(
         runCatching(
             dispatcher = Dispatchers.Default,
             execute = {
-                getAllPokemonsUseCase()
+                getAllPokemonsUseCase(
+                    limit = PAGE_SIZE,
+                    offset = PAGE_SIZE * curPage
+                )
             },
             onSuccess = { pokemon ->
+                curPage++
+                pokemonList.value += pokemon.results
                 setState {
-                    copy(isLoading = false, pokemons = pokemon)
+                    copy(isLoading = false, pokemons = pokemonList.value)
                 }
             }
         )
     }
 
+    companion object {
+        const val PAGE_SIZE = 20
+        const val PAGE_INITIAL = 0
+    }
 }

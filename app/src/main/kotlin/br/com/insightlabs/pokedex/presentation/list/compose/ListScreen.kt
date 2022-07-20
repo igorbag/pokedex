@@ -14,18 +14,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import br.com.insightlabs.pokedex.R
 import br.com.insightlabs.pokedex.domain.model.Pokemon
+import br.com.insightlabs.pokedex.domain.model.Result
 import br.com.insightlabs.pokedex.presentation.components.Header
 import br.com.insightlabs.pokedex.presentation.components.Pokemons
 import br.com.insightlabs.pokedex.presentation.components.Subtitle
 import br.com.insightlabs.pokedex.presentation.components.Title
+import br.com.insightlabs.pokedex.presentation.list.ListScreenViewModel
 
 
 @Composable
 fun ListScreen(
-    pokemon: Pokemon,
-    isLoading : Boolean,
+    pokemon: List<Result>,
+    isLoading: Boolean,
     onDetailClick: (Int, String) -> Unit
 ) {
     Scaffold(
@@ -36,7 +39,7 @@ fun ListScreen(
                 Title()
                 Subtitle()
                 Pokemons(
-                    pokemon = pokemon,
+                    pokemons = pokemon,
                     isLoading = isLoading,
                     onDetailClick
                 )

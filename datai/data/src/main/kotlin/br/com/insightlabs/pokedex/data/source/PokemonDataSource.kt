@@ -5,7 +5,11 @@ import br.com.insightlabs.pokedex.domain.model.PokemonStats
 
 sealed interface PokemonDataSource {
     interface Remote : PokemonDataSource {
-        suspend fun getAllPokemon(): Pokemon
+        suspend fun getAllPokemon(
+            limit: Int,
+            offset: Int
+        ): Pokemon
+
         suspend fun getStatsPokemonById(id: Int): PokemonStats
     }
 }

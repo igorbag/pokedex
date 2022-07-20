@@ -6,14 +6,18 @@ import br.com.insightlabs.pokedex.domain.model.PokemonStats
 import br.com.insightlabs.pokedex.remote.extensions.getOrThrowDomainError
 import br.com.insightlabs.pokedex.remote.mapper.toDomain
 import br.com.insightlabs.pokedex.remote.service.PokemonService
+import retrofit2.http.Query
 import javax.inject.Inject
 
 class PokemonDataSourceRemote @Inject constructor(
     private val service: PokemonService
 ) : PokemonDataSource.Remote {
 
-    override suspend fun getAllPokemon(): Pokemon {
-        return runCatching { service.getAllPokemon() }
+    override suspend fun getAllPokemon(
+        limit: Int,
+        offset: Int
+    ): Pokemon {
+        return runCatching { service.getAllPokemon(limit, offset) }
             .getOrThrowDomainError()
             .toDomain()
     }
