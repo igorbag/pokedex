@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package br.com.insightlabs.pokedex.presentation.detail.navigation
+package br.com.insightlabs.pokedex.presentation.features.detail.navigation
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import br.com.insightlabs.pokedex.core.Navigation
-import br.com.insightlabs.pokedex.presentation.detail.DetailRoute
+import br.com.insightlabs.pokedex.presentation.features.detail.DetailRoute
 
 object DetailNavigation : Navigation {
     override val route = "detail_route"

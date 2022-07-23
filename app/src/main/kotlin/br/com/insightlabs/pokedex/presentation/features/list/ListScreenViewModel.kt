@@ -1,14 +1,11 @@
-package br.com.insightlabs.pokedex.presentation.list
+package br.com.insightlabs.pokedex.presentation.features.list
 
 import androidx.compose.runtime.mutableStateOf
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import br.com.insightlabs.pokedex.core.BaseViewModel
 import br.com.insightlabs.pokedex.core.runCatching
-import br.com.insightlabs.pokedex.domain.model.Pokemon
 import br.com.insightlabs.pokedex.domain.model.Result
 import br.com.insightlabs.pokedex.domain.usecases.GetAllPokemonsUseCase
-import br.com.insightlabs.pokedex.presentation.list.navigation.ListNavigation
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

@@ -1,13 +1,14 @@
 package br.com.insightlabs.pokedex.presentation
 
-import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import br.com.insightlabs.pokedex.presentation.detail.navigation.DetailNavigation
-import br.com.insightlabs.pokedex.presentation.detail.navigation.detailGraph
-import br.com.insightlabs.pokedex.presentation.list.navigation.ListNavigation
-import br.com.insightlabs.pokedex.presentation.list.navigation.listGraph
+import br.com.insightlabs.pokedex.presentation.features.chooseyou.navigation.ChooseYouNavigation
+import br.com.insightlabs.pokedex.presentation.features.chooseyou.navigation.chooseYouGraph
+import br.com.insightlabs.pokedex.presentation.features.detail.navigation.DetailNavigation
+import br.com.insightlabs.pokedex.presentation.features.detail.navigation.detailGraph
+import br.com.insightlabs.pokedex.presentation.features.list.navigation.ListNavigation
+import br.com.insightlabs.pokedex.presentation.features.list.navigation.listGraph
 import br.com.insightlabs.pokedex.ui.theme.PokedexTheme
 
 @Composable
@@ -23,8 +24,14 @@ fun PokemonApp() {
                 navigateToDetail = { id, pokemonName ->
                     navController.navigate("${DetailNavigation.route}/$id/$pokemonName")
                 },
+                navigateToChooseYou = {
+                    navController.navigate(ChooseYouNavigation.route)
+                },
                 nestedGraphs = {
                     detailGraph {
+                        navController.popBackStack()
+                    }
+                    chooseYouGraph {
                         navController.popBackStack()
                     }
                 })

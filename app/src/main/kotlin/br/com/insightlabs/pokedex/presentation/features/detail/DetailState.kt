@@ -1,4 +1,4 @@
-package br.com.insightlabs.pokedex.presentation.detail
+package br.com.insightlabs.pokedex.presentation.features.detail
 
 import br.com.insightlabs.pokedex.domain.model.PokemonStats
 

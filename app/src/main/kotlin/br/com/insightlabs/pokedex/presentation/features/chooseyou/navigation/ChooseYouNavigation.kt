@@ -14,32 +14,26 @@
  * limitations under the License.
  */
 
-package br.com.insightlabs.pokedex.presentation.list.navigation
+package br.com.insightlabs.pokedex.presentation.features.chooseyou.navigation
 
 import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavType
 import androidx.navigation.compose.composable
-import androidx.navigation.navigation
+import androidx.navigation.navArgument
 import br.com.insightlabs.pokedex.core.Navigation
-import br.com.insightlabs.pokedex.presentation.list.ListRoute
+import br.com.insightlabs.pokedex.presentation.features.chooseyou.ChooseYouRoute
+import br.com.insightlabs.pokedex.presentation.features.detail.DetailRoute
+import br.com.insightlabs.pokedex.presentation.features.detail.navigation.DetailNavigation
 
-object ListNavigation : Navigation {
-    override val route = "list_route"
-    override val destination = "list_destination"
+object ChooseYouNavigation : Navigation {
+    override val route = "choose_you_route"
+    override val destination = "choose_you_destination"
 }
 
-fun NavGraphBuilder.listGraph(
-    navigateToDetail: (Int, String) -> Unit,
-    nestedGraphs: NavGraphBuilder.() -> Unit
-) {
-    navigation(
-        route = ListNavigation.route,
-        startDestination = ListNavigation.destination
+fun NavGraphBuilder.chooseYouGraph(onBackClick: () -> Unit) {
+    composable(
+        route = ChooseYouNavigation.route,
     ) {
-        composable(route = ListNavigation.destination) {
-            ListRoute(
-                navigateToDetail = navigateToDetail
-            )
-        }
-        nestedGraphs()
+        ChooseYouRoute(onBackClick)
     }
 }

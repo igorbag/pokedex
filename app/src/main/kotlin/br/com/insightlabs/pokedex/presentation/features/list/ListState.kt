@@ -1,6 +1,5 @@
-package br.com.insightlabs.pokedex.presentation.list
+package br.com.insightlabs.pokedex.presentation.features.list
 
-import br.com.insightlabs.pokedex.domain.model.Pokemon
 import br.com.insightlabs.pokedex.domain.model.Result
 
 

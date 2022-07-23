@@ -1,11 +1,11 @@
-package br.com.insightlabs.pokedex.presentation.detail
+package br.com.insightlabs.pokedex.presentation.features.detail
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import br.com.insightlabs.pokedex.core.BaseViewModel
 import br.com.insightlabs.pokedex.core.runCatching
 import br.com.insightlabs.pokedex.domain.usecases.GetStatsPokemonByIdUseCase
-import br.com.insightlabs.pokedex.presentation.detail.navigation.DetailNavigation
+import br.com.insightlabs.pokedex.presentation.features.detail.navigation.DetailNavigation
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
