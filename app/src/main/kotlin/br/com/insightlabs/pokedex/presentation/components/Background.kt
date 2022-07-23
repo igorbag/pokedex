@@ -46,7 +46,7 @@ fun ImageBackground(
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .fillMaxSize()
-                .alpha(0.8f)
+
         )
 
         Background(content)
@@ -59,7 +59,7 @@ private fun ImageBackgroundPreview() {
     ImageBackground {
         Column(
             modifier = Modifier
-                .padding(top = 63.dp)
+                .padding(top = 60.dp)
                 .fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -78,7 +78,7 @@ private fun ImageBackgroundPreview() {
                 )
             )
             SubcomposeAsyncImage(
-                modifier = Modifier.width(100.dp),
+                modifier = Modifier.width(250.dp),
                 model = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
                 loading = {
                     CircularProgressIndicator(
