@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.insightlabs.pokedex.domain.model.Result
@@ -34,7 +35,7 @@ fun ChooseYouScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Pikachu",
+                text = pokemon.name,
                 style = MaterialTheme.typography.h3.copy(
                     color = Color.White,
                     fontSize = 45.sp
@@ -49,7 +50,7 @@ fun ChooseYouScreen(
             )
             SubcomposeAsyncImage(
                 modifier = Modifier.width(100.dp),
-                model = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+                model = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png",
                 loading = {
                     CircularProgressIndicator(
                         modifier = Modifier.scale(0.5f)
@@ -60,6 +61,19 @@ fun ChooseYouScreen(
             )
         }
     }
+}
+
+@Preview
+@Composable
+fun ChooseYouScreenPreview() {
+    ChooseYouScreen(
+        pokemon = Result(
+            name = "Fake",
+            url = "https://pokeapi.co/api/v2/pokemon/1/"
+        ),
+        isLoading = false,
+        onBackClick = {},
+    )
 }
 
 
