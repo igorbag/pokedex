@@ -4,7 +4,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import br.com.insightlabs.pokedex.core.BaseViewModel
 import br.com.insightlabs.pokedex.core.runCatching
-import br.com.insightlabs.pokedex.domain.usecases.GetStatsPokemonByIdUseCase
+import br.com.insightlabs.pokedex.domain.usecases.GetStatsPokemonByNameUseCase
 import br.com.insightlabs.pokedex.presentation.features.detail.navigation.DetailNavigation
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -14,7 +14,7 @@ import javax.inject.Inject
 @HiltViewModel
 class DetailScreenViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
-    private val getStatsPokemonByIdUseCase: GetStatsPokemonByIdUseCase
+    private val GetStatsPokemonByNameUseCase: GetStatsPokemonByNameUseCase
 ) : BaseViewModel<DetailState, DetailAction>(DetailState()) {
 
     private val pokemonIdArg: Int = checkNotNull(
@@ -34,7 +34,7 @@ class DetailScreenViewModel @Inject constructor(
         runCatching(
             dispatcher = Dispatchers.Default,
             execute = {
-                getStatsPokemonByIdUseCase(pokemonIdArg)
+                GetStatsPokemonByNameUseCase(pokemonIdArg)
             },
             onSuccess = { pokemon ->
                 setState {
