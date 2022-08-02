@@ -10,4 +10,3 @@ data class DetailState(
         stats = emptyList()
     )
 )
-

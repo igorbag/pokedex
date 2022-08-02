@@ -15,7 +15,6 @@ fun ChooseYouRoute(
 
     ChooseYouScreen(
         pokemon = state.pokemon,
-        isLoading = state.isLoading,
         onBackClick = onBackClick
     )
 }

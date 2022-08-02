@@ -6,7 +6,6 @@ import br.com.insightlabs.pokedex.domain.model.PokemonStats
 import br.com.insightlabs.pokedex.remote.extensions.getOrThrowDomainError
 import br.com.insightlabs.pokedex.remote.mapper.toDomain
 import br.com.insightlabs.pokedex.remote.service.PokemonService
-import retrofit2.http.Query
 import javax.inject.Inject
 
 class PokemonDataSourceRemote @Inject constructor(

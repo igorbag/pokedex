@@ -20,14 +20,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import br.com.insightlabs.pokedex.R
 import br.com.insightlabs.pokedex.domain.model.PokemonStats
 import br.com.insightlabs.pokedex.presentation.components.Header
 import br.com.insightlabs.pokedex.presentation.components.ProgressLoading
 import br.com.insightlabs.pokedex.ui.theme.TextWhite
 import coil.compose.SubcomposeAsyncImage
-
 
 @Composable
 fun DetailScreen(
@@ -37,7 +38,6 @@ fun DetailScreen(
 ) {
     Header()
     Column {
-
         if (isLoading) {
             ProgressLoading()
         }
@@ -60,7 +60,7 @@ fun DetailScreen(
             }
         )
         SubcomposeAsyncImage(
-            model = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonStats.id}.png",
+            model = stringResource(id = R.string.url_image_pokemon, pokemonStats.id),
             loading = {
                 CircularProgressIndicator(
                     modifier = Modifier.scale(0.5f)
@@ -89,6 +89,4 @@ fun DetailScreen(
             }
         }
     }
-
 }
-

@@ -9,4 +9,3 @@ data class ChooseYouState(
         url = "https://pokeapi.co/api/v2/pokemon/1/"
     )
 )
-

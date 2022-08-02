@@ -4,31 +4,32 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.*
+import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import br.com.insightlabs.pokedex.R
 import br.com.insightlabs.pokedex.domain.model.Result
 import br.com.insightlabs.pokedex.presentation.components.ImageBackground
 import coil.compose.SubcomposeAsyncImage
 
-
 @Composable
 fun ChooseYouScreen(
     pokemon: Result,
-    isLoading: Boolean,
     onBackClick: () -> Unit = {},
 ) {
     ImageBackground {
@@ -69,7 +70,7 @@ fun ChooseYouScreen(
                 modifier = Modifier
                     .padding(top = 10.dp)
                     .width(400.dp),
-                model = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png",
+                model = stringResource(id = R.string.url_image_pokemon, pokemon.id),
                 loading = {
                     CircularProgressIndicator(
                         modifier = Modifier.scale(0.5f)
@@ -90,9 +91,6 @@ fun ChooseYouScreenPreview() {
             name = "Fake",
             url = "https://pokeapi.co/api/v2/pokemon/1/"
         ),
-        isLoading = false,
         onBackClick = {},
     )
 }
-
-

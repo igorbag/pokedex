@@ -27,5 +27,4 @@ class ApplicationModule {
     fun provideDispatcherDefault(): CoroutineDispatcher {
         return Dispatchers.Default
     }
-
 }

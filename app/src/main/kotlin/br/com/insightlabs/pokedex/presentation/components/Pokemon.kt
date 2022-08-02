@@ -1,14 +1,26 @@
 package br.com.insightlabs.pokedex.presentation.components
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.GridCells
+import androidx.compose.foundation.lazy.LazyListState
+import androidx.compose.foundation.lazy.LazyVerticalGrid
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
@@ -18,7 +30,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import br.com.insightlabs.pokedex.domain.model.Result
 import br.com.insightlabs.pokedex.presentation.features.list.ListScreenViewModel
 import coil.compose.SubcomposeAsyncImage
-
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -80,7 +91,6 @@ fun Pokemons(
         listState.OnBottomReached {
             viewModel.getAllPokemons()
         }
-
     }
 }
 

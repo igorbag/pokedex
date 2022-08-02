@@ -17,7 +17,6 @@ import br.com.insightlabs.pokedex.presentation.components.Pokemons
 import br.com.insightlabs.pokedex.presentation.components.Subtitle
 import br.com.insightlabs.pokedex.presentation.components.Title
 
-
 @Composable
 fun ListScreen(
     pokemon: List<Result>,

@@ -17,13 +17,9 @@
 package br.com.insightlabs.pokedex.presentation.features.chooseyou.navigation
 
 import androidx.navigation.NavGraphBuilder
-import androidx.navigation.NavType
 import androidx.navigation.compose.composable
-import androidx.navigation.navArgument
 import br.com.insightlabs.pokedex.core.Navigation
 import br.com.insightlabs.pokedex.presentation.features.chooseyou.ChooseYouRoute
-import br.com.insightlabs.pokedex.presentation.features.detail.DetailRoute
-import br.com.insightlabs.pokedex.presentation.features.detail.navigation.DetailNavigation
 
 object ChooseYouNavigation : Navigation {
     override val route = "choose_you_route"

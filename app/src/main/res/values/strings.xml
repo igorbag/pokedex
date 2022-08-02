@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Pokedex</string>
     <string name="label_subtitle">Listagem de todos os Pokemons</string>
+    <string name="url_image_pokemon">https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/%1$d.png</string>
 </resources>

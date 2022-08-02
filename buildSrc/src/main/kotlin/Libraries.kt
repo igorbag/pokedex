@@ -46,7 +46,6 @@ object Libraries {
         const val runtime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
     }
 
-
     object Google {
         const val material = "com.google.android.material:material:${Versions.Google.material}"
     }
